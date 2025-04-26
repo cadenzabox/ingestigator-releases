@@ -1,10 +1,5 @@
 name: Clone Ingestigator Build Files
-on:
-  # kick off the job on demand
-  workflow_dispatch:
-  # and run on a schedule every 12 hours
-  schedule:
-    - cron: "* */12 * * *"
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,5 +7,5 @@ jobs:
       - name: Run action
         uses: andrewthetechie/gha-clone-releases@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           src_repo: cadenzabox/ingestigator
